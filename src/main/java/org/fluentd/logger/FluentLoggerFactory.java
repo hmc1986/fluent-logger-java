@@ -59,6 +59,9 @@ public class FluentLoggerFactory {
             if (entry.getValue().equals(key)) {
                 FluentLogger found = entry.getKey();
                 if(found != null) {
+		    if(found.getSender() == null){
+                        found.setSender(getNewSender(host, port, timeout, bufferCapacity, reconnector));
+                    }
                     return found;
                 }
                 break;
