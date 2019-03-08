@@ -155,4 +155,9 @@ public class FluentLogger {
     public Sender getSender() {
         return sender;
     }
+    public void setSender(Sender sender) {
+        if(sender == null){
+            this.sender = sender;
+        }
+    }
 }
